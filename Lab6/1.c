@@ -31,7 +31,27 @@ void push(struct Stack *stack,int value){
     }
     
 }
+int pop(struct Stack *stack,int value){
+    if (isEmpty(stack))
+    {
+        printf("Stack Underflow");
 
+    }else
+    {
+        int popVal = stack->arr[stack->top];
+        stack->top--;
+        printf("poped value %d\n",popVal);
+        return popVal;
+    }
+    
+    
+}
+int top(struct Stack *stack){
+    int topVal = stack->arr[stack->top];
+    printf("top val:%d\n",topVal);
+    return topVal;
+
+}
 void disp(struct Stack* stack){
         if (isEmpty(stack)) {
        printf("Stack is empty!\n");
@@ -51,6 +71,9 @@ int main(){
 
     push(&stack,10);
     push(&stack,30);
+
+    pop(&stack,10);
+    top(&stack);
     disp(&stack);
     return 0;
 }
