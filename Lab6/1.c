@@ -31,7 +31,7 @@ void push(struct Stack *stack,int value){
     }
     
 }
-int pop(struct Stack *stack,int value){
+int pop(struct Stack *stack){
     if (isEmpty(stack))
     {
         printf("Stack Underflow");
@@ -72,7 +72,7 @@ int main(){
     push(&stack,10);
     push(&stack,30);
 
-    pop(&stack,10);
+    pop(&stack);
     top(&stack);
     disp(&stack);
     return 0;
